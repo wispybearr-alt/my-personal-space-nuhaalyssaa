@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home | Nuha Alyssa</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="popup.css">
+
+</head>
+
+<body>
+
+    <!-- GLASS HEADER -->
+    <header class="site-header">
+
+        <div class="site-brand">
+            <h1>NUHA ALYSSA</h1>
+            <p>MY PERSONAL SPACE</p>
+        </div>
+
+        <!-- DIGITAL CLOCK -->
+        <div class="clock-box">
+            <div id="digital-clock">Loading...</div>
+            <div id="digital-date">Loading...</div>
+        </div>
+
+    </header>
+
+
+    <!-- GLASS NAVIGATION -->
+    <div class="nav-container">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="active">Home</a>
+            <a href="biodata.html">Biodata</a>
+            <a href="education.html">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="family.html">Family</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+
+    <!-- HOME CONTENT -->
+    <main class="main-content">
+
+        <section class="glass-card home-card">
+
+            <p class="small-heading">
+                WELCOME TO MY PERSONAL SPACE
+            </p>
+
+            <h2>Hello, I'm Nuha Alyssa.</h2>
+
+            <p>
+                A little space, a little about me.
+                This website is where I share my academic journey,
+                personal experiences and memorable moments.
+            </p>
+
+            <a href="biodata.html" class="discover-btn">
+                Discover More About Me
+            </a>
+
+            <!-- POPUP BUTTON -->
+            <button
+                class="popup-button"
+                data-popup-title="Nice to Meet You! 🤎"
+                data-popup-message="Let's get to know each other a little better. Discover more about me, my background and the person behind this little space.">
+
+                Meet Nuha Alyssa
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>PERSONAL WEBSITE · IMD318 · 2026</p>
+    </footer>
+
+
+    <!-- DIGITAL CLOCK JAVASCRIPT -->
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            function updateClock() {
+
+                const now = new Date();
+
+                let hours = now.getHours();
+                let minutes = now.getMinutes();
+                let seconds = now.getSeconds();
+
+                const ampm = hours >= 12 ? "PM" : "AM";
+
+                // CONVERT TO 12-HOUR FORMAT
+                hours = hours % 12;
+                hours = hours === 0 ? 12 : hours;
+
+                // ADD ZERO
+                hours = String(hours).padStart(2, "0");
+                minutes = String(minutes).padStart(2, "0");
+                seconds = String(seconds).padStart(2, "0");
+
+                // UPDATE CLOCK
+                const clock = document.getElementById("digital-clock");
+
+                if (clock) {
+                    clock.textContent =
+                        hours + ":" + minutes + ":" + seconds + " " + ampm;
+                }
+
+                // UPDATE DATE
+                const date = document.getElementById("digital-date");
+
+                if (date) {
+                    date.textContent = now.toLocaleDateString("en-MY", {
+                        weekday: "long",
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric"
+                    });
+                }
+
+            }
+
+            // RUN CLOCK IMMEDIATELY
+            updateClock();
+
+            // UPDATE EVERY SECOND
+            setInterval(updateClock, 1000);
+
+        });
+
+    </script>
+
+
+    <!-- OTHER JAVASCRIPT FILES -->
+    <script src="popup.js"></script>
+    <script src="music-player.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Nuha Alyssa</title>
+
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="popup.css">
+</head>
+
+
+<!-- GLASS HEADER -->
+<header class="site-header">
+
+    <div class="site-brand">
+        <h1>NUHA ALYSSA</h1>
+        <p>MY PERSONAL SPACE</p>
+    </div>
+
+    <!-- DIGITAL CLOCK -->
+    <div class="clock-box">
+        <div id="digital-clock">00:00:00 AM</div>
+        <div id="digital-date">Loading date...</div>
+    </div>
+
+</header>
+
+<!-- NAVIGATION -->
+<div class="nav-container">
+    <nav class="navbar">
+
+        <a href="index.html">Home</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="family.html">Family</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+
+    </nav>
+</div>
+    </nav>
+
+
+    <!-- CONTACT INTRODUCTION -->
+    <section class="contact-hero">
+
+        <p class="contact-label">LET'S CONNECT</p>
+
+        <h1>Get In Touch</h1>
+
+        <p>
+            Thank you for visiting my personal website.
+            I am always happy to connect with new people.
+            Feel free to reach out through my social media
+            or send me a message.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT CONTENT -->
+    <section class="contact-container">
+
+
+        <!-- LEFT SECTION -->
+        <div class="contact-info">
+
+            <h2>Contact Information</h2>
+
+            <p class="contact-description">
+                I would love to hear from you!
+                Feel free to connect with me through
+                the following platforms.
+            </p>
+
+
+            <!-- EMAIL -->
+            <div class="contact-detail">
+
+                <h3>Email Address</h3>
+
+                <p>
+                    wispybearr@gmail.com
+                </p>
+
+            </div>
+
+
+            <!-- LOCATION -->
+            <div class="contact-detail">
+
+                <h3>Location</h3>
+
+                <p>Malaysia</p>
+
+            </div>
+
+
+            <!-- SOCIAL MEDIA -->
+            <div class="contact-detail">
+
+                <h3>Connect With Me</h3>
+
+                <div class="social-links">
+
+                    <!-- FACEBOOK -->
+                    <a href="https://www.facebook.com/NuhaAlyssa"
+                       target="_blank">
+
+                        <span class="social-icon">f</span>
+
+                        <span>Facebook</span>
+
+                        <span class="social-arrow">↗</span>
+
+                    </a>
+
+
+                    <!-- INSTAGRAM -->
+                    <a href="https://www.instagram.com/nuhaalyssaa/"
+                       target="_blank">
+
+                        <span class="social-icon">◎</span>
+
+                        <span>Instagram</span>
+
+                        <span class="social-arrow">↗</span>
+
+                    </a>
+
+
+                    <!-- TIKTOK -->
+                    <a href="https://www.tiktok.com/@prvunaa"
+                       target="_blank">
+
+                        <span class="social-icon">♪</span>
+
+                        <span>TikTok</span>
+
+                        <span class="social-arrow">↗</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUOTE -->
+            <div class="contact-note">
+
+                <p>
+                    "Every connection begins with
+                    a simple hello."
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT SECTION -->
+        <div class="contact-form-box">
+
+            <h2>Send Me a Message</h2>
+
+            <p>
+                Have something to share?
+                Fill in the form below.
+            </p>
+
+
+            <form action="mailto:your-email@example.com"
+                  method="post"
+                  enctype="text/plain">
+
+
+                <label for="name">Your Name</label>
+
+                <input type="text"
+                       id="name"
+                       name="Name"
+                       placeholder="Enter your name"
+                       required>
+
+
+                <label for="email">Your Email</label>
+
+                <input type="email"
+                       id="email"
+                       name="Email"
+                       placeholder="Enter your email"
+                       required>
+
+
+                <label for="subject">Subject</label>
+
+                <input type="text"
+                       id="subject"
+                       name="Subject"
+                       placeholder="Enter subject"
+                       required>
+
+
+                <label for="message">Message</label>
+
+                <textarea id="message"
+                          name="Message"
+                          rows="5"
+                          placeholder="Write your message here..."
+                          required></textarea>
+
+
+                <button type="submit">
+                    Send Message →
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <footer class="contact-footer">
+
+        <p>© 2026 Nuha Alyssa. All Rights Reserved.</p>
+
+        <p>PERSONAL WEBSITE | IMD318</p>
+
+    </footer>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    function updateClock() {
+
+        const now = new Date();
+
+        const clock = document.getElementById("digital-clock");
+        const date = document.getElementById("digital-date");
+
+        if (!clock || !date) {
+            console.error("Clock element not found!");
+            return;
+        }
+
+        clock.textContent = now.toLocaleTimeString("en-US", {
+            timeZone: "Asia/Kuala_Lumpur",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
+        });
+
+        date.textContent = now.toLocaleDateString("en-GB", {
+            timeZone: "Asia/Kuala_Lumpur",
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+});
+</script>
+
+</body>
+<script src="popup.js"></script>
+<script src="music-player.js"></script>
+</html>
+
+

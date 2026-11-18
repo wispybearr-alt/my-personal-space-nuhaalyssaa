@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Family | Personal Website</title>
+
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="popup.css">
+
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    function updateClock() {
+
+        const now = new Date();
+
+        const clock = document.getElementById("digital-clock");
+        const date = document.getElementById("digital-date");
+
+        if (!clock || !date) {
+            console.error("Clock element not found!");
+            return;
+        }
+
+        clock.textContent = now.toLocaleTimeString("en-US", {
+            timeZone: "Asia/Kuala_Lumpur",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
+        });
+
+        date.textContent = now.toLocaleDateString("en-GB", {
+            timeZone: "Asia/Kuala_Lumpur",
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+});
+</script>
+
+</body>
+</html>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>NUHA ALYSSA</h1>
+        <p>MY PERSONAL SPACE</p>
+    </header>
+
+   
+<!-- GLASS HEADER -->
+<header class="site-header">
+
+    <div class="site-brand">
+        <h1>NUHA ALYSSA</h1>
+        <p>MY PERSONAL SPACE</p>
+    </div>
+
+    <!-- DIGITAL CLOCK -->
+    <div class="clock-box">
+        <div id="digital-clock">00:00:00 AM</div>
+        <div id="digital-date">Loading date...</div>
+    </div>
+
+</header>
+
+<!-- NAVIGATION -->
+<div class="nav-container">
+    <nav class="navbar">
+
+        <a href="index.html">Home</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="family.html">Family</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+
+    </nav>
+</div>
+
+    </nav>
+
+    <!-- FAMILY INTRODUCTION -->
+    <section class="family-hero">
+
+        <p class="family-label">THE PEOPLE I CALL HOME</p>
+
+        <h1>My Lovely Family</h1>
+
+        <p>
+            Family is where life begins and love never ends.
+            They are my greatest support system, my comfort,
+            and an important part of my journey.
+        </p>
+
+    </section>
+
+    <!-- FAMILY INTRODUCTION -->
+    <section class="family-about">
+
+        <div class="family-about-text">
+
+            <span class="small-heading">A LITTLE ABOUT THEM</span>
+
+            <h2>My Biggest Blessing</h2>
+
+            <p>
+                My family means everything to me. They have always
+                been an important part of my life, teaching me the
+                values of love, patience, respect and togetherness.
+            </p>
+
+            <p>
+                Through every moment, both happy and challenging,
+                my family remains a source of strength and motivation.
+                I am truly grateful to have them in my life.
+            </p>
+
+        </div>
+
+        <div class="family-about-image">
+            <img src="family.jpg" alt="My Family">
+        </div>
+
+    </section>
+
+    <!-- FAMILY MEMBERS -->
+    <section class="family-members">
+
+        <span class="small-heading">MY WORLD</span>
+
+        <h2>Meet My Family</h2>
+
+        <p class="family-subtitle">
+            The special people who make my life meaningful.
+        </p>
+
+        <div class="family-card-container">
+
+            <div class="family-card">
+                <img src="father.jpg" alt="Father">
+                <h3>My Father</h3>
+                <p>A wonderful person who guides and supports me.</p>
+            </div>
+
+            <div class="family-card">
+                <img src="mother.jpg" alt="Mother">
+                <h3>My Mother</h3>
+                <p>A loving soul who fills our home with warmth.</p>
+            </div>
+
+            <div class="family-card">
+                <img src="siblings.jpg" alt="Siblings">
+                <h3>My Siblings</h3>
+                <p>My companions in creating unforgettable memories.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAMILY MEMORIES -->
+    <section class="family-memories">
+
+        <span class="small-heading">PRECIOUS MOMENTS</span>
+
+        <h2>Memories Together</h2>
+
+        <p>
+            Every picture tells a story, and every moment
+            becomes a memory worth keeping.
+        </p>
+
+        <div class="family-gallery">
+
+            <img src="memory1.jpg" alt="Family Memory 1">
+            <img src="memory2.jpg" alt="Family Memory 2">
+            <img src="memory3.jpg" alt="Family Memory 3">
+
+        </div>
+
+    </section>
+
+    <!-- FAMILY QUOTE -->
+    <section class="family-quote">
+
+        <h2>"Together is our favourite place to be."</h2>
+
+        <p>Forever grateful for my family.</p>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Nuha Alyssa | Personal Website</p>
+    </footer>
+
+</body>
+<script src="popup.js"></script>
+<script src="music-player.js"></script>
+</html>

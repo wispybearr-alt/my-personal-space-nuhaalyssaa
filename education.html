@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Education | Nuha Alyssa</title>
+
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="popup.css">
+
+    <style>
+        /* EDUCATION PAGE DESIGN */
+
+        body.edu-page {
+            background-color: #f8f5ef;
+            color: #44382f;
+        }
+
+        .edu-hero {
+            background: #e9dfd2;
+            padding: 75px 10%;
+            text-align: left;
+            border-radius: 0 0 35px 35px;
+        }
+
+        .edu-label {
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #987e65;
+            margin-bottom: 20px;
+        }
+
+        .edu-hero h1 {
+            font-family: Georgia, serif;
+            font-size: 52px;
+            font-weight: normal;
+            line-height: 1.2;
+            color: #49392e;
+            margin-bottom: 15px;
+        }
+
+        .edu-hero h1 span {
+            font-style: italic;
+        }
+
+        .edu-hero p {
+            color: #796957;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+        .edu-main {
+            max-width: 1050px;
+            margin: 60px auto;
+            padding: 0 25px;
+        }
+
+        .edu-intro {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 75px;
+        }
+
+        .edu-intro h2 {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            font-weight: normal;
+            color: #594536;
+        }
+
+        .edu-intro p {
+            color: #827466;
+            line-height: 1.9;
+            font-size: 14px;
+        }
+
+        .edu-section-label {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #a18a70;
+            margin-bottom: 12px;
+        }
+
+        .edu-section-title {
+            font-family: Georgia, serif;
+            font-size: 34px;
+            font-weight: normal;
+            margin-bottom: 45px;
+            color: #49392e;
+        }
+
+        /* TIMELINE */
+
+        .edu-timeline {
+            position: relative;
+            margin-left: 15px;
+            padding-left: 40px;
+            border-left: 1px solid #c9b8a5;
+        }
+
+        .edu-card {
+            position: relative;
+            background: #fffdfa;
+            padding: 30px;
+            margin-bottom: 35px;
+            border-radius: 5px;
+            border: 1px solid #e9dfd3;
+            transition: 0.4s ease;
+        }
+
+        .edu-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 12px 30px rgba(88, 65, 43, 0.10);
+        }
+
+        .edu-card::before {
+            content: "";
+            position: absolute;
+            left: -49px;
+            top: 35px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #92785e;
+            border: 4px solid #f8f5ef;
+        }
+
+        .edu-number {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            color: #c9b8a5;
+            margin-bottom: 10px;
+        }
+
+        .edu-level {
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #a18a70;
+            text-transform: uppercase;
+        }
+
+        .edu-card h3 {
+            font-family: Georgia, serif;
+            font-size: 23px;
+            font-weight: normal;
+            color: #49392e;
+            margin: 12px 0;
+        }
+
+        .edu-institution {
+            font-size: 14px;
+            color: #766453;
+            line-height: 1.8;
+        }
+
+        .edu-tag {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 7px 14px;
+            background: #eee6dc;
+            color: #826c55;
+            font-size: 11px;
+            letter-spacing: 1px;
+            border-radius: 20px;
+        }
+
+        /* EXPANDABLE DETAILS */
+
+        .edu-details {
+            margin-top: 20px;
+            border-top: 1px solid #e9dfd3;
+            padding-top: 15px;
+        }
+
+        .edu-details summary {
+            cursor: pointer;
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: #92785e;
+            list-style: none;
+        }
+
+        .edu-details summary::after {
+            content: " ＋";
+        }
+
+        .edu-details[open] summary::after {
+            content: " −";
+        }
+
+        .edu-details p {
+            font-size: 13px;
+            color: #827466;
+            line-height: 1.8;
+            margin-top: 15px;
+        }
+
+        /* LEARNING SECTION */
+
+        .edu-learning {
+            margin-top: 85px;
+        }
+
+        .edu-skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .edu-skill {
+            background: #eee6dc;
+            padding: 25px 20px;
+            text-align: center;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .edu-skill:hover {
+            background: #dfd0bf;
+            transform: translateY(-5px);
+        }
+
+        .edu-skill span {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            color: #92785e;
+        }
+
+        .edu-skill p {
+            font-size: 13px;
+            color: #665545;
+            margin-top: 12px;
+        }
+
+        /* CLOSING SECTION */
+
+        .edu-closing {
+            background: #49392e;
+            color: #f8f1e8;
+            padding: 55px 30px;
+            text-align: center;
+            margin-top: 90px;
+            border-radius: 8px;
+        }
+
+        .edu-closing h2 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            font-weight: normal;
+            font-style: italic;
+            margin-bottom: 18px;
+        }
+
+        .edu-closing p {
+            color: #e0d2c1;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .edu-footer {
+            text-align: center;
+            padding: 30px 15px;
+            color: #927f6b;
+            font-size: 12px;
+            line-height: 2;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 650px) {
+
+            .edu-hero {
+                padding: 55px 25px;
+            }
+
+            .edu-hero h1 {
+                font-size: 38px;
+            }
+
+            .edu-skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .edu-card {
+                padding: 22px;
+            }
+
+            .edu-section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="edu-page">
+
+    <!-- HERO SECTION -->
+
+    <header class="edu-hero">
+
+        <div class="edu-label">
+            MY STORY · MY GROWTH · MY JOURNEY
+        </div>
+
+        <h1>
+            A Journey of<br>
+            <span>Learning & Growing.</span>
+        </h1>
+
+        <p>
+            Every chapter of my education shapes who I am today.
+        </p>
+
+    </header>
+
+
+    
+<!-- GLASS HEADER -->
+<header class="site-header">
+
+    <div class="site-brand">
+        <h1>NUHA ALYSSA</h1>
+        <p>MY PERSONAL SPACE</p>
+    </div>
+
+    <!-- DIGITAL CLOCK -->
+    <div class="clock-box">
+        <div id="digital-clock">00:00:00 AM</div>
+        <div id="digital-date">Loading date...</div>
+    </div>
+
+</header>
+
+<!-- NAVIGATION -->
+<div class="nav-container">
+    <nav class="navbar">
+
+        <a href="index.html">Home</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="family.html">Family</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+
+    </nav>
+</div>
+
+    </nav>
+
+
+    <main class="edu-main">
+
+        <!-- INTRODUCTION -->
+
+        <section class="edu-intro">
+
+            <div class="edu-section-label">
+                A LITTLE ABOUT MY ACADEMIC LIFE
+            </div>
+
+            <h2>Where My Journey Begins</h2>
+
+            <p>
+                Education has always been an important part
+                of my personal development. From my early
+                school years to higher education, every
+                experience has taught me valuable lessons,
+                built my confidence and shaped my perspective.
+            </p>
+
+        </section>
+
+
+        <!-- EDUCATION TIMELINE -->
+
+        <section>
+
+            <div class="edu-section-label">
+                CHAPTER 01 — 03
+            </div>
+
+            <h2 class="edu-section-title">
+                My Academic Journey
+            </h2>
+
+
+            <div class="edu-timeline">
+
+                <!-- PRIMARY SCHOOL -->
+
+                <div class="edu-card">
+
+                    <div class="edu-number">01</div>
+
+                    <div class="edu-level">
+                        Primary Education
+                    </div>
+
+                    <h3>My First Learning Chapter</h3>
+
+                    <p class="edu-institution">
+                        Sekolah Kebangsaan Seri Bengkal (SKSB)
+                    </p>
+
+                    <span class="edu-tag">
+                        Primary Education · UPSR
+                    </span>
+
+                    <details class="edu-details">
+
+                        <summary>EXPLORE DETAILS</summary>
+
+                        <p>
+                            My early educational journey began
+                            at Sekolah Kebangsaan Seri Bengkal,
+                            where I developed fundamental
+                            knowledge and built the foundation
+                            for my future learning experiences.
+                        </p>
+
+                    </details>
+
+                </div>
+
+
+                <!-- SECONDARY SCHOOL -->
+
+                <div class="edu-card">
+
+                    <div class="edu-number">02</div>
+
+                    <div class="edu-level">
+                        Secondary Education
+                    </div>
+
+                    <h3>A Chapter of Discovery</h3>
+
+                    <p class="edu-institution">
+                        Sekolah Menengah Kebangsaan Dato Seth
+                        (SMKDS)
+                    </p>
+
+                    <span class="edu-tag">
+                        Secondary Education · SPM
+                    </span>
+
+                    <details class="edu-details">
+
+                        <summary>EXPLORE DETAILS</summary>
+
+                        <p>
+                            During my secondary school years,
+                            I continued to expand my knowledge,
+                            improve my communication skills
+                            and experience personal growth
+                            through various learning activities.
+                        </p>
+
+                    </details>
+
+                </div>
+
+
+                <!-- HIGHER EDUCATION -->
+
+                <div class="edu-card">
+
+                    <div class="edu-number">03</div>
+
+                    <div class="edu-level">
+                        Higher Education
+                    </div>
+
+                    <h3>Exploring My Passion</h3>
+
+                    <p class="edu-institution">
+                        Universiti Teknologi MARA (UiTM),
+                        Johor
+                    </p>
+
+                    <span class="edu-tag">
+                        Diploma in Information Management
+                    </span>
+
+                    <details class="edu-details">
+
+                        <summary>EXPLORE DETAILS</summary>
+
+                        <p>
+                            My journey at UiTM has introduced
+                            me to the field of Information
+                            Management. Throughout my diploma
+                            studies, I have gained knowledge
+                            and practical experience in
+                            managing information, organising
+                            records and working collaboratively.
+                        </p>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LEARNING EXPERIENCE -->
+
+        <section class="edu-learning">
+
+            <div class="edu-section-label">
+                BEYOND THE CLASSROOM
+            </div>
+
+            <h2 class="edu-section-title">
+                Skills & Knowledge
+            </h2>
+
+            <div class="edu-skills">
+
+                <div class="edu-skill">
+                    <span>01</span>
+                    <p>Communication & Teamwork</p>
+                </div>
+
+                <div class="edu-skill">
+                    <span>02</span>
+                    <p>Time Management</p>
+                </div>
+
+                <div class="edu-skill">
+                    <span>03</span>
+                    <p>Information Management</p>
+                </div>
+
+                <div class="edu-skill">
+                    <span>04</span>
+                    <p>Critical Thinking</p>
+                </div>
+
+                <div class="edu-skill">
+                    <span>05</span>
+                    <p>Problem Solving</p>
+                </div>
+
+                <div class="edu-skill">
+                    <span>06</span>
+                    <p>Adaptability</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EDUCATIONAL GOALS -->
+
+        <section class="edu-closing">
+
+            <div class="edu-label" style="color:#d3b99c;">
+                A NOTE TO MYSELF
+            </div>
+
+            <h2>
+                "The journey is still unfolding."
+            </h2>
+
+            <p>
+                I believe that learning never truly ends.
+                I look forward to gaining new experiences,
+                improving my knowledge and continuing
+                to grow into a better version of myself.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="edu-footer">
+
+        <p>Created and maintained by: Nuha Alyssa</p>
+
+        <p>Last Updated: November 2026</p>
+
+        <p>
+            Copyright &copy; 2026 Nuha Alyssa.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    function updateClock() {
+
+        const now = new Date();
+
+        const clock = document.getElementById("digital-clock");
+        const date = document.getElementById("digital-date");
+
+        if (!clock || !date) {
+            console.error("Clock element not found!");
+            return;
+        }
+
+        clock.textContent = now.toLocaleTimeString("en-US", {
+            timeZone: "Asia/Kuala_Lumpur",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
+        });
+
+        date.textContent = now.toLocaleDateString("en-GB", {
+            timeZone: "Asia/Kuala_Lumpur",
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+});
+</script>
+
+</body>
+<script src="music-player.js"></script>
+<script src="popup.js"></script>
+</html>
+

@@ -1,0 +1,243 @@
+
+/* =================================
+   NUHA ALYSSA - POPUP DESIGN
+================================= */
+
+:root {
+    --popup-cream: #f8f3eb;
+    --popup-beige: #e8dccc;
+    --popup-brown: #806750;
+    --popup-dark: #49392e;
+    --popup-white: #fffdf9;
+}
+
+/* OVERLAY */
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(45, 34, 27, 0.48);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.35s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* POPUP CARD */
+
+.popup-card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--popup-cream);
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 24px;
+    padding: 38px 30px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 70px rgba(0,0,0,0.18);
+
+    transform: translateY(25px) scale(0.96);
+    transition: 0.4s ease;
+}
+
+.popup-overlay.active .popup-card {
+    transform: translateY(0) scale(1);
+}
+
+.popup-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.popup-card h2 {
+    color: var(--popup-dark);
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.popup-card p {
+    color: var(--popup-brown);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    border: none;
+    background: transparent;
+    color: var(--popup-brown);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.popup-button {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: var(--popup-brown);
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.popup-button:hover {
+    background: var(--popup-dark);
+    transform: translateY(-3px);
+}
+
+/* FLOATING NOTIFICATION */
+
+.popup-toast {
+    position: fixed;
+    bottom: 28px;
+    left: 25px;
+    max-width: 300px;
+    background: rgba(248, 243, 235, 0.94);
+    backdrop-filter: blur(12px);
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 15px 20px;
+    color: var(--popup-dark);
+    font-size: 13px;
+    line-height: 1.6;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    z-index: 9996;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.4s ease;
+    pointer-events: none;
+}
+
+.popup-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FLOATING BUBBLE */
+
+.popup-bubble {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 58px;
+    height: 58px;
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 50%;
+    background: rgba(128, 103, 80, 0.92);
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(73,57,46,0.25);
+    z-index: 9997;
+    transition: 0.3s ease;
+}
+
+.popup-bubble:hover {
+    transform: translateY(-5px) rotate(10deg);
+}
+
+/* MINI MENU */
+
+.popup-menu {
+    position: fixed;
+    bottom: 95px;
+    right: 25px;
+    width: 210px;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(248,243,235,0.96);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    z-index: 9997;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: 0.3s ease;
+}
+
+.popup-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.popup-menu h4 {
+    color: var(--popup-dark);
+    margin: 0 0 12px;
+    font-size: 14px;
+}
+
+.popup-menu a {
+    display: block;
+    padding: 10px 5px;
+    color: var(--popup-brown);
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 1px solid var(--popup-beige);
+    transition: 0.2s;
+}
+
+.popup-menu a:hover {
+    color: var(--popup-dark);
+    padding-left: 10px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .popup-card {
+        padding: 35px 22px;
+    }
+
+    .popup-card h2 {
+        font-size: 22px;
+    }
+
+    .popup-bubble {
+    position: fixed;
+    bottom: 95px;
+    right: 25px;
+    }
+
+  .popup-menu {
+    bottom: 165px;
+}
+
+    .popup-toast {
+        left: 15px;
+        bottom: 18px;
+        max-width: 230px;
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .popup-overlay,
+    .popup-card,
+    .popup-toast,
+    .popup-bubble,
+    .popup-menu {
+        transition: none;
+    }
+}

@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Biodata | Nuha Alyssa</title>
+
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="popup.css">
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    function updateClock() {
+
+        const now = new Date();
+
+        const clock = document.getElementById("digital-clock");
+        const date = document.getElementById("digital-date");
+
+        if (!clock || !date) {
+            console.error("Clock element not found!");
+            return;
+        }
+
+        clock.textContent = now.toLocaleTimeString("en-US", {
+            timeZone: "Asia/Kuala_Lumpur",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
+        });
+
+        date.textContent = now.toLocaleDateString("en-GB", {
+            timeZone: "Asia/Kuala_Lumpur",
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+});
+</script>
+
+</body>
+<script src="music-player.js"></script>
+</html>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="main-header">
+
+        <div class="header-brand">
+            <p class="brand-name">NUHA ALYSSA</p>
+            <p class="brand-subtitle">MY PERSONAL SPACE</p>
+        </div>
+
+    </header>
+
+
+<!-- GLASS HEADER -->
+<header class="site-header">
+
+    <div class="site-brand">
+        <h1>NUHA ALYSSA</h1>
+        <p>MY PERSONAL SPACE</p>
+    </div>
+
+    <!-- DIGITAL CLOCK -->
+    <div class="clock-box">
+        <div id="digital-clock">00:00:00 AM</div>
+        <div id="digital-date">Loading date...</div>
+    </div>
+
+</header>
+
+<!-- NAVIGATION -->
+<div class="nav-container">
+    <nav class="navbar">
+
+        <a href="index.html">Home</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="family.html">Family</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+
+    </nav>
+</div>
+    </nav>
+
+
+    <main class="journal-page">
+
+        <!-- PAGE INTRO -->
+
+        <section class="journal-heading">
+
+            <p class="journal-label">A PERSONAL JOURNAL · 01</p>
+
+            <h1>
+                A little<br>
+                <span>about me.</span>
+            </h1>
+
+            <p class="journal-subtitle">
+                A collection of little details,
+                personal stories and things that make me who I am.
+            </p>
+
+            <div class="journal-line"></div>
+
+        </section>
+
+
+        <!-- PROFILE INTRODUCTION -->
+
+        <section class="journal-intro">
+
+            <div class="profile-small">
+
+                <img src="images/profile.jpg"
+                     alt="Nuha Alyssa">
+
+            </div>
+
+            <div class="intro-content">
+
+                <p class="journal-label">HELLO, IT'S ME</p>
+
+                <h2>Nuha Alyssa</h2>
+
+                <p>
+                    Hello! My name is Nuha Alyssa.
+                    Welcome to my little corner of the internet.
+
+                    I am a student who enjoys learning new things,
+                    discovering different experiences and creating
+                    meaningful memories along the way.
+                </p>
+
+                <span class="handwritten">
+                    Nice to meet you! ♡
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERSONAL DETAILS -->
+
+        <section class="journal-details">
+
+            <div class="section-heading">
+
+                <p class="journal-label">01 — THE BASICS</p>
+
+                <h2>Little Details About Me</h2>
+
+            </div>
+
+            <div class="details-grid">
+
+                <div class="detail-card">
+                    <span>FULL NAME</span>
+                    <h3>Nuha Alyssa Binti Nordin</h3>
+                </div>
+
+                <div class="detail-card">
+                    <span>NICKNAME</span>
+                    <h3>Nuha</h3>
+                </div>
+
+                <div class="detail-card">
+                    <span>DATE OF BIRTH</span>
+                    <h3>24 May 2006</h3>
+                </div>
+
+                <div class="detail-card">
+                    <span>PLACE OF BIRTH</span>
+                    <h3>Hospital Pakar Johor Bahru</h3>
+                </div>
+
+                <div class="detail-card">
+                    <span>NATIONALITY</span>
+                    <h3>Malaysian</h3>
+                </div>
+
+                <div class="detail-card">
+                    <span>FAVOURITE COLOUR</span>
+                    <h3>Purple</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERSONALITY -->
+
+        <section class="journal-about">
+
+            <div>
+                <p class="journal-label">02 — MY STORY</p>
+                <h2>A little more about myself.</h2>
+            </div>
+
+            <p>
+                I am someone who enjoys exploring new things
+                and learning from different experiences.
+                I believe that every journey has something
+                valuable to teach us.
+
+                Through this personal website, I hope to
+                share a little part of my life, my interests
+                and the experiences that have shaped me.
+            </p>
+
+        </section>
+
+
+        <!-- HOBBIES -->
+
+        <section class="journal-interests">
+
+            <p class="journal-label">03 — THINGS I ENJOY</p>
+
+            <h2>My Little Interests</h2>
+
+            <div class="interest-list">
+
+                <div class="interest-item">
+                    <span>01</span>
+                    <p>Listening to Music</p>
+                    <span>♫</span>
+                </div>
+
+                <div class="interest-item">
+                    <span>02</span>
+                    <p>Exploring New Things</p>
+                    <span>✧</span>
+                </div>
+
+                <div class="interest-item">
+                    <span>03</span>
+                    <p>Photography</p>
+                    <span>♡</span>
+                </div>
+
+                <div class="interest-item">
+                    <span>04</span>
+                    <p>Playing Video Games</p>
+                    <span>✿</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section class="journal-skills">
+
+            <p class="journal-label">04 — WHAT I BRING</p>
+
+            <h2>Skills & Abilities</h2>
+
+            <div class="skill-tags">
+
+                <span>Communication</span>
+                <span>Teamwork</span>
+                <span>Time Management</span>
+                <span>Problem Solving</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- CLOSING -->
+
+        <section class="journal-ending">
+
+            <p>THANK YOU FOR STOPPING BY</p>
+
+            <h2>Every little detail<br>
+                tells a story.</h2>
+
+            <span>— Nuha Alyssa ♡</span>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>Designed & Developed by Nuha Alyssa</p>
+
+        <p>IMD318 | Individual Project</p>
+
+        <p>Copyright &copy; 2026 All Rights Reserved.</p>
+
+    </footer>
+
+</body>
+<script src="popup.js"></script>
+</html>
